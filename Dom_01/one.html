@@ -4,17 +4,129 @@
 <head>
   <meta charset="UTF-8">
   <title>Dom learning</title>
+  <style>
+    .bg-black{
+      background-color: #212121;
+      color: #fff;
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-black">
 
-  <div class="bg-black">
-    <h1 id="firstheading" class="heading">Dom learning with vansh patel - For manipulate all document elements in javascript basic flow line is here 😍</h1>
+  <div>
+    <h1 style="color: blue;" id="title" class="heading">Dom learning with vansh patel <span style="display: none;">test text</span> - For manipulate all document elements in javascript basic flow line is here 😍</h1>
+
+    <h2>Lorem ipsum dolor sit amet.</h1>
+    <h2>Lorem ipsum dolor sit amet.</h1>
+    <h2>Lorem ipsum dolor sit amet.</h1>
+
     <h2>window (Root element) 😎 > Document > HTML > Head & Body</h2>
     
     <p>Lorem ipsum dolor sit amet.</p>
+
+    <input type="password" name="" id="">
+
+    <ul>
+      <li class="list">one</li>
+      <li class="list">two</li>
+      <li class="list">three</li>
+    </ul>
+
   </div>
 
 </body>
 
 </html>
+
+<!-- try things  -->
+
+document.getElementById('title') =>  access element 
+
+document.getElementById('title').id  => get id name of this element 
+
+document.getElementById('title').className => get className of this element 
+
+document.getElementById('title').getAttribute('id')  => get id name of this element
+
+document.getElementById('title').getAttribute('class') => get className of this element
+
+document.getElementById('title').setAttribute('heading','main') => set className main replace with heading
+
+document.getElementById('title').setAttribute('heading','main line') => set multiple class
+
+const title = document.getElementById('title'); => assign element into variable
+
+title.style.backgroundColor = 'green' => set backgroundcolor green
+
+title.style.padding = '15px' => set padding inside element
+
+title.style.borderRadius = '5px' => set borderradious of element
+
+title.textContent => it shows all with subelements 
+
+title.innerText =>  it only shows element text
+
+title.innerHTML => it gives all value and show span written element also
+
+document.querySelector('h1') => it gives first h1 of page
+
+document.querySelector('#title') => it gives title id element ( easy to use )
+
+document.querySelector('.heading') => it gives heading className element ( easy to use )
+
+document.querySelector('input[type="password"]')
+
+<!-- select first li of ul and change bg color green and set padding 10px -->
+
+document.querySelector('ul')
+
+const myul = document.querySelector('ul')
+
+myul.querySelector('li')
+
+const turngreen = myul.querySelector('li')
+
+turngreen.style.backgroundColor = "green"
+
+turngreen.style.padding = "10px"
+
+turngreen.innerText = "five"
+
+<!-- same but do with querySelectorAll -->
+
+document.querySelectorAll('li')
+
+const tempLilist = document.querySelectorAll('li')
+
+tempLilist.style.color = "green" => here we received nodelist so it gives error 
+
+tempLilist[0].style.color = "green" => declare index ( it likely as array )
+
+<!-- same as H1 -->
+
+const myH1 = document.querySelectorAll('h1')
+
+myH1.style.color = "green" => here we received nodelist so it gives error 
+
+myH1[0].style.color = "green" => declare index ( it likely as array )
+
+<!-- we can do foreach function in templist -->
+
+const tempLilist = document.querySelectorAll('ul')
+
+tempLilist.forEach(function (l) {     => all li background become green
+    l.style.backgroundColor = "green"
+})
+
+<!-- now when we select className we have HTMLCollections so we basically convert into Array first -->
+
+document.getElementsByClassName('list')
+
+const tempClassList = document.getElementsByClassName('list')
+
+const mycovertedArray = Array.from(tempClassList)
+
+mycovertedArray.forEach(function (li) {   => now all li color become orange 
+    li.style.color = "orange"
+})
